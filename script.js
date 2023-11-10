@@ -1,7 +1,7 @@
 // script.js
 function decryptSubstitutionCipher(ciphertext) {
-    const plaintextAlphabet = "ABCDEFGHIJKLMNOPRSTUVWXYZ";
-    const ciphertextAlphabet = "EOBNCFVSUPMQIWXHRKDZGTJLA";
+    const plaintextAlphabet = " ABCDEFGHIJKLMNOPRSTUVWXYZ";
+    const ciphertextAlphabet = " EOBNCFVSUPMQIWXHRKDZGTJLA";
 
     const mapping = {};
     for (let i = 0; i < plaintextAlphabet.length; i++) {
