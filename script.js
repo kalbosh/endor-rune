@@ -1,7 +1,6 @@
 // script.js
-function decryptSubstitutionCipher(ciphertext) {
-    const plaintextAlphabet = " ABCDEFGHIJKLMNOPRSTUVWXYZ";
-    const ciphertextAlphabet = " EOBNCFVSUPMQIWXHRKDZGTJLA";
+function decryptSubstitutionCipher(ciphertext, ciphertextAlphabet) {
+    const plaintextAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     const mapping = {};
     for (let i = 0; i < plaintextAlphabet.length; i++) {
@@ -12,7 +11,14 @@ function decryptSubstitutionCipher(ciphertext) {
 }
 
 document.getElementById("decryptButton").addEventListener("click", function() {
+    const ciphertextAlphabet = document.getElementById("ciphertextAlphabet").value.toUpperCase();
     const ciphertext = document.getElementById("cipherText").value.toUpperCase();
-    const decryptedText = decryptSubstitutionCipher(ciphertext);
+    
+    if (ciphertextAlphabet.length !== 26) {
+        alert("Please enter a valid ciphertext alphabet with 26 characters.");
+        return;
+    }
+
+    const decryptedText = decryptSubstitutionCipher(ciphertext, ciphertextAlphabet);
     document.getElementById("decryptedText").textContent = decryptedText;
 });
