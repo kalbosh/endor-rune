@@ -1,6 +1,6 @@
 // script.js
 function decryptSubstitutionCipher(ciphertext, ciphertextAlphabet) {
-    const plaintextAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const plaintextAlphabet = "ABCDEFGHIJKLMNOPRSTUVWXYZ";
 
     const mapping = {};
     for (let i = 0; i < plaintextAlphabet.length; i++) {
@@ -14,8 +14,8 @@ document.getElementById("decryptButton").addEventListener("click", function() {
     const ciphertextAlphabet = document.getElementById("ciphertextAlphabet").value.toUpperCase();
     const ciphertext = document.getElementById("cipherText").value.toUpperCase();
     
-    if (ciphertextAlphabet.length !== 26) {
-        alert("Please enter a valid ciphertext alphabet with 26 characters.");
+    if (ciphertextAlphabet.length !== 25) {
+        alert("Please enter a valid ciphertext alphabet with 25 characters.");
         return;
     }
 
